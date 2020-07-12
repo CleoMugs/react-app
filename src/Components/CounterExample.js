@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React, { useState } from 'react'
 
 function CounterExample(){
 	const [count, setCount] = useState(0)
@@ -8,6 +8,11 @@ function CounterExample(){
 				<h1>
 					{count}
 				</h1>
+
+				<h1 onClick={() => setCount(count + 1)}>
+					Plus
+				</h1>
+
 			</div>
 		)
 }
