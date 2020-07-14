@@ -1,33 +1,41 @@
 import React from 'react';
-import HelloWorld from './Components/HelloWorld'
-import Header from './Components/Header'
-import Footer from './Components/Footer'
 import {
   BrowserRouter as Router,
   Switch,
   Route,
   Link
 } from "react-router-dom";
+import Header from './Components/Header'
+import Footer from './Components/Footer'
+import Home from './Views/Home'
+import About from './Views/About'
+
 
 function App() {
   return (
     <div>
-      <Header />
-
-      <HelloWorld name="Cleo" />
 
       <Router>
-        <ul>
-          <li>
-            <Link to="/" className="text-blue-500">Home</Link>
-          </li>
-          <li>
-            <Link to="/about" className="text-blue-500">About</Link>
-          </li>
-        </ul>
-      </Router>
 
+        <Header />
+        <div className="p-3">
+
+        <Switch>
+        <Route exact path="/">
+          <Home />                                                                                                                                                                                                      
+        </Route>
+
+        <Route path="/about">                                                                                               
+          <About />
+        </Route>
+
+        </Switch>
+
+        </div>
+        
       <Footer />
+
+      </Router>
 
     </div>
   );
